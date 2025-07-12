@@ -246,7 +246,234 @@ section {
     text-align: center;
 }
 
-/* Responsive Design Adjustments */
+/* Contact Page Specific Styles */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for contact items */
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center; /* Center content within contact items */
+}
+
+.contact-item {
+    background: #333333; /* Darker gray for contact cards */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push content to top/bottom */
+}
+
+.contact-item h3 {
+    color: #6699cc; /* Accent color for sub-headings */
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(102, 153, 204, 0.3); /* Subtle underline */
+    padding-bottom: 10px;
+}
+
+.contact-item p {
+    color: #d0d0d0;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Allow paragraphs to take up space */
+}
+
+.contact-item .contact-detail {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px; /* Space before buttons/next section */
+}
+
+.contact-item .contact-detail a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item .contact-detail a:hover {
+    color: #6699cc;
+}
+
+.social-links-contact {
+    margin-top: 20px;
+    display: flex; /* Arrange buttons horizontally */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+    gap: 15px; /* Space between social buttons */
+}
+
+/* Ensure buttons within contact items have correct styling */
+.contact-item .btn {
+    margin-top: 15px; /* Space below content */
+    width: auto; /* Allow button to size itself */
+    min-width: 150px; /* Minimum width for buttons */
+}
+
+/* Media Page Specific Styles (for YouTube Videos) */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for videos */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.video-item {
+    background: #333333; /* Darker gray for video cards */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.video-item h3 {
+    color: #6699cc; /* Accent color for video titles */
+    font-size: 1.4em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.video-item p {
+    color: #d0d0d0;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow description to take available space */
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width = 9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Black background for video loading */
+    border-radius: 5px; /* Match item border-radius */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.video-item .btn {
+    align-self: center; /* Center the button in the video item */
+    margin-top: 15px;
+    width: fit-content;
+    min-width: 120px;
+}
+
+/* Wiki Page Specific Styles */
+.wiki-section-overview {
+    background: #333333;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.wiki-section-overview h3 {
+    color: #6699cc;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(102, 153, 204, 0.4);
+    padding-bottom: 10px;
+    text-align: center; /* Center the "Table of Contents" title */
+}
+
+.wiki-toc {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    columns: 2; /* Two columns for table of contents */
+    column-gap: 30px;
+}
+
+.wiki-toc li {
+    margin-bottom: 12px; /* Increased vertical spacing between items */
+}
+
+.wiki-toc li a {
+    color: #ffffff; /* Brighter white for better contrast */
+    text-decoration: none; /* Remove default underline */
+    font-weight: normal; /* Keep normal weight, can change to bold if preferred */
+    font-size: 1.1em; /* Slightly larger font size */
+    display: inline-block; /* Allows padding and margin on links */
+    padding: 5px 0; /* Add some vertical padding */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.wiki-toc li a:hover {
+    color: #6699cc; /* Accent color on hover */
+    text-decoration: underline; /* Add underline on hover for clear indication */
+}
+
+.wiki-product-section {
+    background: #2a2a2a; /* Slightly darker background for individual product sections */
+    padding: 40px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    border: 1px solid rgba(102, 153, 204, 0.2); /* Subtle border */
+}
+
+.wiki-product-section h3 {
+    color: #e0e0e0;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #6699cc;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.wiki-product-section h4 {
+    color: #6699cc;
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(102, 153, 204, 0.3);
+    padding-bottom: 5px;
+}
+
+.wiki-product-section p {
+    color: #c0c0c0;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.wiki-product-section ul,
+.wiki-product-section ol {
+    color: #c0c0c0;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.wiki-product-section ul li,
+.wiki-product-section ol li {
+    margin-bottom: 8px;
+}
+
+.wiki-product-image {
+    max-width: 300px; /* Limit image size */
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Center image */
+    margin: 0 auto 30px auto; /* Center and add space below */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.wiki-product-section .btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0 auto; /* Center button */
+}
+
+/* Responsive adjustments for Wiki TOC */
 @media (max-width: 768px) {
     .main-header .container {
         flex-direction: column;
@@ -275,6 +502,10 @@ section {
 
     .product-grid {
         grid-template-columns: 1fr; /* Stack products on small screens */
+    }
+
+    .wiki-toc {
+        columns: 1; /* Single column on smaller screens */
     }
 }
 
