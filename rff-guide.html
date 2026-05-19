@@ -3,72 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reel Fun Fishing HUD - User Guide</title>
+    <title>Reel Fun Fishing HUD - User Guide | GetCo Designs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
-        :root {
-            --primary: #0ea5e9;
-        }
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-            line-height: 1.6;
-            color: #334155;
-            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            max-width: 980px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        
-        .logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: white;
-            letter-spacing: -1px;
-        }
-        
-        h1 {
-            color: white;
-            font-size: 2.5rem;
-            margin: 0 0 12px 0;
-            font-weight: 700;
-        }
-        
-        .subtitle {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 600px;
+        /* Additional styles for the guide page */
+        .guide-container {
+            max-width: 900px;
             margin: 0 auto;
         }
         
-        .card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            padding: 32px;
+        .guide-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
             margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
         
-        .warning {
+        .warning-box {
             background: #fef3c7;
             border-left: 5px solid #f59e0b;
             padding: 16px 20px;
@@ -76,22 +29,8 @@
             margin: 20px 0;
         }
         
-        .warning strong {
+        .warning-box strong {
             color: #92400e;
-        }
-        
-        h2 {
-            color: #0f172a;
-            font-size: 1.5rem;
-            margin-top: 0;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-        
-        h3 {
-            color: #0ea5e9;
-            font-size: 1.25rem;
-            margin-top: 28px;
         }
         
         .step {
@@ -103,15 +42,15 @@
         .step-number {
             background: #0ea5e9;
             color: white;
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 9999px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             flex-shrink: 0;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .step-content {
@@ -121,14 +60,21 @@
         .step-content h4 {
             margin: 0 0 8px 0;
             color: #1e2937;
+            font-size: 1.1rem;
         }
         
-        ul, ol {
-            padding-left: 24px;
+        .tip-box {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin: 16px 0;
         }
         
-        li {
-            margin-bottom: 8px;
+        .guide-section h2 {
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
         }
         
         .highlight {
@@ -139,261 +85,223 @@
             color: #0369a1;
         }
         
-        .tip {
-            background: #ecfdf5;
-            border-left: 4px solid #10b981;
-            padding: 14px 18px;
-            border-radius: 8px;
-            margin: 16px 0;
-        }
-        
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        
-        .section-header::before {
-            content: '';
-            height: 3px;
-            background: linear-gradient(to right, #0ea5e9, transparent);
-            flex: 1;
-        }
-        
-        footer {
-            text-align: center;
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-top: 60px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #0ea5e9;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        .btn:hover {
-            background: #0284c8;
-        }
-        
-        .important {
+        .important-text {
             color: #b91c1c;
             font-weight: 600;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="logo">
-                <span style="font-size: 2.8rem;">🎣</span>
-                <span class="logo-text">Reel Fun Fishing</span>
-            </div>
-            <h1>HUD User Guide</h1>
-            <p class="subtitle">Complete step-by-step instructions for the Reel Fun Fishing HUD<br>
-            <strong>Beta Tester Version</strong></p>
-        </header>
-
-        <!-- Important Notice -->
-        <div class="card">
-            <div class="warning">
-                <strong>⚠️ CRITICAL WARNING</strong><br>
-                <strong>Always attach the HUD first before adding your License.</strong><br>
-                Adding the license before the HUD can cause validation issues.
-            </div>
-            
-            <h2>Quick Overview</h2>
-            <p>The Reel Fun Fishing HUD is a <strong>fish anywhere</strong> system. You do not need to be near Linden water or a special server. 
-            Your beta tester package includes <strong>1 HUD + Infinite License</strong>.</p>
-            
-            <div class="tip">
-                <strong>License Info:</strong> Licenses provide unlimited bait and the ability to fish anywhere in Second Life. 
-                All licenses are <strong>cumulative</strong>. New licenses add to your remaining time.
-            </div>
+    <!-- Header / Navbar (matching your site) -->
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">GetCo Designs</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="wiki.html">Wiki</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <!-- Step 1: Getting Started -->
-        <div class="card">
-            <div class="section-header">
-                <h2>1. Getting Started – Activate Your HUD &amp; License</h2>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h4>Attach the HUD</h4>
-                    <p>Right-click the HUD in your inventory and select <strong>Wear</strong> (or drag it onto your avatar).</p>
-                    <p>Wait for the confirmation message in <strong>local chat</strong>:</p>
-                    <p><span class="highlight">✅ Valid Hud/user</span></p>
-                    <p>Move the HUD to your preferred screen position. Click the logo to expand or minimize it.</p>
-                    <div class="tip">
-                        <strong>Note:</strong> When wearing a fishing rod and you minimize the HUD, it will automatically detach your rod.
+    <main>
+        <section class="content-section light-gray-bg">
+            <div class="container guide-container">
+                
+                <h2 style="text-align: center; margin-bottom: 10px;">Reel Fun Fishing HUD</h2>
+                <p style="text-align: center; color: #64748b; margin-bottom: 40px;">Beta Tester User Guide</p>
+
+                <!-- Critical Warning -->
+                <div class="guide-card">
+                    <div class="warning-box">
+                        <strong>⚠️ CRITICAL WARNING</strong><br>
+                        <strong>Always attach the HUD first before adding your License.</strong><br>
+                        Adding the license before the HUD can cause validation issues.
+                    </div>
+                    
+                    <h3>Quick Overview</h3>
+                    <p>The <strong>Reel Fun Fishing HUD</strong> is a modern <strong>fish anywhere</strong> system. You do not need to be near Linden water or a special server. Your beta tester package includes <strong>1 HUD + Infinite License</strong>.</p>
+                    
+                    <div class="tip-box">
+                        <strong>License Info:</strong> Licenses provide unlimited bait and the ability to fish anywhere in Second Life. 
+                        All licenses are <strong>cumulative</strong>. New licenses add to your remaining time.
                     </div>
                 </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h4>Add Your License</h4>
-                    <p><span class="important">IMPORTANT:</span> You must attach the HUD <strong>before</strong> adding the license.</p>
-                    <p>Rez or attach your License, then click it. The license time will be added to your HUD and verified.</p>
-                    <p>Once the <strong>"LICENSE"</strong> indicator on the HUD turns <strong>green</strong>, you are ready to get your rod.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Step 2: Fishing -->
-        <div class="card">
-            <div class="section-header">
-                <h2>2. How to Fish</h2>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h4>Open Settings &amp; Choose a Rod</h4>
-                    <p>Click the <strong>SETTINGS</strong> button on the HUD. A blue popup menu will appear.</p>
-                    <p>Click <strong>FISHING</strong>.</p>
-                    <p>Choose your rod type:</p>
+                <!-- Getting Started -->
+                <div class="guide-card">
+                    <h3>1. Getting Started – Activate Your HUD &amp; License</h3>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Attach the HUD</h4>
+                            <p>Right-click the HUD in your inventory and select <strong>Wear</strong> (or drag it onto your avatar).</p>
+                            <p>Wait for the confirmation message in <strong>local chat</strong>:</p>
+                            <p><span class="highlight">✅ Valid Hud/user</span></p>
+                            <p>Move the HUD to your preferred screen position. Click the logo to expand or minimize it.</p>
+                            <div class="tip-box">
+                                <strong>Note:</strong> When wearing a fishing rod and you minimize the HUD, it will automatically detach your rod.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Add Your License</h4>
+                            <p><span class="important-text">IMPORTANT:</span> You must attach the HUD <strong>before</strong> adding the license.</p>
+                            <p>Rez or attach your License, then click it. The license time will be added to your HUD and verified.</p>
+                            <p>Once the <strong>"LICENSE"</strong> indicator on the HUD turns <strong>green</strong>, you are ready to get your rod.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Fish -->
+                <div class="guide-card">
+                    <h3>2. How to Fish</h3>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Open Settings &amp; Choose a Rod</h4>
+                            <p>Click the <strong>SETTINGS</strong> button on the HUD. A blue popup menu will appear.</p>
+                            <p>Click <strong>FISHING</strong>.</p>
+                            <p>Choose your rod type:</p>
+                            <ul>
+                                <li><strong>Salt Water</strong> – Generally produces bigger fish</li>
+                                <li><strong>Fresh Water</strong> – Can also produce monster-sized fish</li>
+                            </ul>
+                            <p>The chosen rod will be delivered to your inventory. <strong>Wear the rod</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Cast &amp; Catch Fish</h4>
+                            <p>Once the rod is worn, the <strong>CAST</strong> and <strong>CLEAR &amp; BAIT</strong> buttons on the HUD will turn green.</p>
+                            <p>Click <strong>CAST</strong> to cast your line.</p>
+                            <p>Watch <strong>local chat</strong> to see what you caught (or didn’t catch).</p>
+                            
+                            <div class="tip-box">
+                                <strong>Important:</strong> You <strong>must</strong> have the fishing pole attached for the cast operation to work.
+                            </div>
+                            
+                            <p>After every successful catch, click <strong>CLEAR &amp; BAIT</strong> to reset. Then click <strong>CAST</strong> again.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contests -->
+                <div class="guide-card">
+                    <h3>3. Running Multi-User Contests</h3>
+                    
+                    <p>Once you’ve fished for a while and want some friendly competition:</p>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Start a Contest (as Host)</h4>
+                            <ol>
+                                <li>Click <strong>SETTINGS</strong> on your HUD.</li>
+                                <li>Click <strong>CONTESTS</strong>.</li>
+                                <li>Click <strong>Default Contest</strong> (it will be labeled something like “Contest1”).</li>
+                            </ol>
+                            <p>The contest will start and be announced in the region.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Join a Contest (as Participant)</h4>
+                            <p>Other anglers on the <strong>same sim</strong> should do the following:</p>
+                            <ol>
+                                <li>Open their HUD → <strong>SETTINGS</strong> → <strong>CONTESTS</strong>.</li>
+                                <li>Click <strong>Join “Contest1”</strong> (or the active contest name).</li>
+                            </ol>
+                            <p>May the best angler win by <strong>total weight</strong>!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <strong>Current Limitations:</strong><br>
+                        • Contests must be started and ended manually by the host.<br>
+                        • You can view Participants, End the contest, and check Scores from the menu.<br>
+                        • Contests cannot run while traveling between sims.
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="guide-card">
+                    <h3>4. Troubleshooting &amp; FAQ</h3>
+                    
+                    <h4>Common Issues &amp; Solutions</h4>
                     <ul>
-                        <li><strong>Salt Water</strong> – Generally produces bigger fish</li>
-                        <li><strong>Fresh Water</strong> – Can also produce monster-sized fish</li>
+                        <li><strong>HUD or rod not responding?</strong><br>
+                            Most issues are fixed by simply detaching and re-attaching the HUD and/or fishing rod. Also make sure you have the latest version of the HUD.</li>
+                        
+                        <li><strong>Sim crossing problems?</strong><br>
+                            This is a HUD, not a vehicle. Avoid crossing sims at high speed or at sharp angles while the HUD is active. Slow troll fishing across sim lines works fine.</li>
+                        
+                        <li><strong>My catches aren’t being counted?</strong><br>
+                            You most likely logged off or crashed while the HUD was active. Contact Joe or Short immediately for a replacement.</li>
+                        
+                        <li><strong>Why do I have to click CLEAR &amp; BAIT after every catch?</strong><br>
+                            This is by design. Many users like taking pictures with their catches. Auto-clear would remove that opportunity.</li>
+                        
+                        <li><strong>Can I run contests while moving between sims?</strong><br>
+                            No. All contests must stay on the sim where they were started.</li>
                     </ul>
-                    <p>The chosen rod will be delivered to your inventory. <strong>Wear the rod</strong>.</p>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h4>Cast &amp; Catch Fish</h4>
-                    <p>Once the rod is worn, the <strong>CAST</strong> and <strong>CLEAR &amp; BAIT</strong> buttons on the HUD will turn green.</p>
-                    <p>Click <strong>CAST</strong> to cast your line.</p>
-                    <p>Watch <strong>local chat</strong> to see what you caught (or didn’t catch).</p>
                     
-                    <div class="tip">
-                        <strong>Important:</strong> You <strong>must</strong> have the fishing pole attached for the cast operation to work.
+                    <div class="tip-box">
+                        <strong>Server Maintenance:</strong> Occasionally the external data servers go down for short maintenance. 
+                        Keep fishing anyway — your catches will still accumulate even if stats temporarily stop updating.
                     </div>
+                </div>
+
+                <!-- Additional Notes -->
+                <div class="guide-card">
+                    <h3>5. Additional Notes</h3>
+                    <ul>
+                        <li>The fishing pole <strong>must be attached</strong> for the CAST button to function.</li>
+                        <li>You must click <strong>CLEAR &amp; BAIT</strong> after every catch before you can cast again.</li>
+                        <li>Minimizing the HUD while wearing a rod will <strong>automatically detach</strong> the rod.</li>
+                        <li>Currently supports up to 50 fish variations (more coming soon).</li>
+                        <li>You can view your catches via the <strong>Tacklebox</strong> button (when available).</li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div class="guide-card">
+                    <h3>Join the Community</h3>
+                    <p>Stay updated, report bugs, and chat with other anglers:</p>
+                    <ul>
+                        <li><strong>Inworld Group:</strong> <a href="secondlife:///app/group/20bbfaaa-3d05-46c6-76b9-3e584392d493/about" target="_blank">Join Group</a></li>
+                        <li><strong>Discord:</strong> <a href="https://discord.gg/waQB6mz2" target="_blank">discord.gg/waQB6mz2</a></li>
+                        <li><strong>Website &amp; Stats:</strong> <a href="https://www.reelfishing.org" target="_blank">reelfishing.org</a></li>
+                        <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61572919943972" target="_blank">Facebook Page</a></li>
+                    </ul>
                     
-                    <p>After every successful catch, click <strong>CLEAR &amp; BAIT</strong> to reset. Then click <strong>CAST</strong> again.</p>
-                    <p>Repeat as much as you like!</p>
+                    <p style="margin-top: 20px;"><strong>Questions?</strong> Contact <strong>Joe</strong> or <strong>Short</strong> in-world.</p>
                 </div>
-            </div>
-        </div>
 
-        <!-- Step 3: Contests -->
-        <div class="card">
-            <div class="section-header">
-                <h2>3. Running Multi-User Contests</h2>
             </div>
-            
-            <p>Once you’ve fished for a while and want some friendly competition:</p>
-            
-            <div class="step">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <h4>Start a Contest (as Host)</h4>
-                    <ol>
-                        <li>Click <strong>SETTINGS</strong> on your HUD.</li>
-                        <li>Click <strong>CONTESTS</strong>.</li>
-                        <li>Click <strong>Default Contest</strong> (it will be labeled something like “Contest1”).</li>
-                    </ol>
-                    <p>The contest will start and be announced in the region.</p>
-                </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">6</div>
-                <div class="step-content">
-                    <h4>Join a Contest (as Participant)</h4>
-                    <p>Other anglers on the <strong>same sim</strong> should do the following:</p>
-                    <ol>
-                        <li>Open their HUD → <strong>SETTINGS</strong> → <strong>CONTESTS</strong>.</li>
-                        <li>Click <strong>Join “Contest1”</strong> (or the active contest name).</li>
-                    </ol>
-                    <p>May the best angler win by <strong>total weight</strong>!</p>
-                </div>
-            </div>
-            
-            <div class="tip">
-                <strong>Current Limitations:</strong><br>
-                • Contests must be started and ended manually by the host.<br>
-                • You can view Participants, End the contest, and check Scores from the menu.<br>
-                • Contests cannot run while traveling between sims.
-            </div>
-        </div>
+        </section>
+    </main>
 
-        <!-- Troubleshooting -->
-        <div class="card">
-            <div class="section-header">
-                <h2>4. Troubleshooting &amp; FAQ</h2>
-            </div>
-            
-            <h3>Common Issues &amp; Solutions</h3>
-            
-            <ul>
-                <li><strong>HUD or rod not responding?</strong><br>
-                    Most issues are fixed by simply detaching and re-attaching the HUD and/or fishing rod. Also make sure you have the latest version of the HUD.</li>
-                
-                <li><strong>Sim crossing problems?</strong><br>
-                    This is a HUD, not a vehicle. Avoid crossing sims at high speed or at sharp angles while the HUD is active. 
-                    Slow troll fishing across sim lines works fine.</li>
-                
-                <li><strong>My catches aren’t being counted?</strong><br>
-                    You most likely logged off or crashed while the HUD was active. Contact Joe or Short immediately for a replacement.</li>
-                
-                <li><strong>Why do I have to click CLEAR &amp; BAIT after every catch?</strong><br>
-                    This is by design. Many users like taking pictures with their catches. Auto-clear would remove that opportunity.</li>
-                
-                <li><strong>Can I run contests while moving between sims?</strong><br>
-                    No. All contests must stay on the sim where they were started.</li>
-            </ul>
-            
-            <div class="tip">
-                <strong>Server Maintenance:</strong> Occasionally the external data servers go down for short maintenance. 
-                Keep fishing anyway — your catches will still accumulate even if stats temporarily stop updating.
-            </div>
+    <!-- Footer (matching your site) -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 GetCo Designs. All rights reserved.</p>
+            <p>Connect with me in-world: GetCo Resident</p>
         </div>
-
-        <!-- Additional Notes -->
-        <div class="card">
-            <h2>5. Additional Notes</h2>
-            <ul>
-                <li>The fishing pole <strong>must be attached</strong> for the CAST button to function.</li>
-                <li>You must click <strong>CLEAR &amp; BAIT</strong> after every catch before you can cast again.</li>
-                <li>Minimizing the HUD while wearing a rod will <strong>automatically detach</strong> the rod.</li>
-                <li>Currently supports up to 50 fish variations (more coming soon).</li>
-                <li>You can view your catches via the <strong>Tacklebox</strong> button (when available).</li>
-            </ul>
-        </div>
-
-        <!-- Community -->
-        <div class="card">
-            <h2>Join the Community</h2>
-            <p>Stay updated, report bugs, and chat with other anglers:</p>
-            <ul>
-                <li><strong>Inworld Group:</strong> <a href="secondlife:///app/group/20bbfaaa-3d05-46c6-76b9-3e584392d493/about" target="_blank">Join Group</a></li>
-                <li><strong>Discord:</strong> <a href="https://discord.gg/waQB6mz2" target="_blank">discord.gg/waQB6mz2</a></li>
-                <li><strong>Website &amp; Stats:</strong> <a href="https://www.reelfishing.org" target="_blank">reelfishing.org</a></li>
-                <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61572919943972" target="_blank">Facebook Page</a></li>
-            </ul>
-            
-            <p style="margin-top: 20px;"><strong>Questions?</strong> Contact <strong>Joe</strong> or <strong>Short</strong> in-world.</p>
-        </div>
-
-        <footer>
-            <p>Reel Fun Fishing • Beta Tester Guide • GetCo Designs</p>
-            <p style="margin-top: 8px;">Many more features and add-ons coming soon. Get excited! 🎣</p>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>
